@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <dl>
+    <dt><font size="4"><b>등록정보</b></font></dt>
+    <dd>참여인원(최대 10명)
+    <input type="number" name="people" id="people" value="1" min="1" max="10" /></dd>
+    <dd>지원물품(1인당 5개)
+    <input type="number" name="supplie" id="supplie" value="5" min="5" max="50" step="5" /></dd>
+    <dd>참여인원(하, 중, 상)
+    <input type="range" value="0" min="0" max="2"></dd>
+  </dl>
+  <fieldset>
+    <legend><font size="4"><b>수강 과목을 선택하세요(1과목 선택 가능)</b></font></legend>
+    <dl>
+    <dd>신청과목(회화) :
+    <input type="radio" name="subject" id="subject1" value="영어회화(초급)" checked />영어회화(초급)
+    <input type="radio" name="subject" id="subject2" value="영어회화(중급)" />영어회화(중급)
+    <input type="radio" name="subject" id="subject3" value="영어회화(고급)" />영어회화(고급)</dd>
+    <dd>신청과목(자격) :
+    <input type="radio" name="quali" id="quali1" value="TOEIC" checked />TOEIC
+    <input type="radio" name="quali" id="quali2" value="TOEFL" />TOEFL
+    <input type="radio" name="quali" id="quali3" value="OPIC" />OPIC</dd>
+  </fieldset>
+  &nbsp;<input type="submit" value="신청하기">&nbsp;<input type="reset" value="다시쓰기">
+  </dl>
+</body>
+</html>

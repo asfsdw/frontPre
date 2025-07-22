@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <fieldset>
+    <legend><font size="4"><b>수강 신청인</b></font></legend>
+    <dl>
+      <dd>학번
+      <input type="number" name="int" id="int"></dd>
+      <dd>이름
+      <input type="text" name="name" id="name"></dd>
+      <dd>학과
+      <select name="subject" id="subject">
+        <option>컴퓨터공학과</option>
+        <option>기계공학과</option>
+        <option>전자공학과</option>
+        <option>토목공학과</option>
+        <option>건축공학과</option>
+      </select></dd>
+    </dl>
+  </fieldset>
+  <fieldset>
+    <legend><font size="4"><b>수강 과목을 선택하세요</b></font></legend>
+    <!-- <dl>선호색상
+      <select name="subject" id="subject">
+        <option><font color="red">빨강</font></option>
+        <option><font color="orange">■■■■■</font></option>
+        <option><font color="yellow">■■■■■</font></option>
+        <option><font color="green">■■■■■</font></option>
+        <option><font color="blue">■■■■■</font></option>
+      </select></dd>
+      구현 실패-->
+      <dd>신청과목(회화) :
+      <input type="radio" name="subject" id="subject1" value="영어회화(초급)" checked />영어회화(초급)
+      <input type="radio" name="subject" id="subject2" value="영어회화(중급)" />영어회화(중급)
+      <input type="radio" name="subject" id="subject3" value="영어회화(고급)" />영어회화(고급)</dd>
+      <dd>신청과목(자격) :
+      <input type="radio" name="quali" id="quali1" value="TOEIC" checked />TOEIC
+      <input type="radio" name="quali" id="quali2" value="TOEFL" />TOEFL
+      <input type="radio" name="quali" id="quali3" value="OPIC" />OPIC</dd>
+      <dd>관심분야 :
+      <input type="checkbox" name="field" id="field" value="문법">문법
+      <input type="checkbox" name="field" id="field" value="vocaburary">vocaburary
+      <input type="checkbox" name="field" id="field" value="회화">회화
+      <input type="checkbox" name="field" id="field" value="리스닝">리스닝
+      <input type="checkbox" name="field" id="field" value="뉴스청취">뉴스청취
+      <input type="checkbox" name="field" id="field" value="독해">독해</dd>
+    </dl>
+    <legend><font size="4"><b>강의 시간을 선택하세요</b></font></legend>
+    <dl>
+      <dd>개강 주 :
+      <input type="week" name="subweek" id="subweek" value="09:00"></dd>
+      <dd>강의시간 :
+      <input type="time" name="subtime" id="subtime"></dd>
+    </dl>
+  </fieldset>
+  &nbsp;<input type="submit" value="신청하기">&nbsp;<input type="reset" value="다시쓰기">
+</body>
+</html>

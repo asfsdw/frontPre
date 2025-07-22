@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <fieldset>
+    <legend><font size="4" color="#93f"><b>개인 정보</b></font></legend>
+    <dl>
+      <dd>이름
+      <input type="text" name="name" id="name" placeholder="여백없이 입력" required></dd>
+      <dd>연락처
+      <input type="tel" name="tel" id="tel" placeholder="연락가능한 번호" required></dd>
+    </dl>
+  </fieldset>
+  <fieldset>
+    <legend><font size="4" color="#93f"><b>배송지 정보 </b></font></legend>
+    <dl>
+      <dd>주소
+      <input type="text" name="address" id="address" required></dd>
+      <dd>연락처
+      <input type="tel" name="tel" id="tel" placeholder="연락가능한 번호" required></dd></br>
+      <dd>메모
+      <textarea row="5" cols="30" name="content" id="content"></textarea></dd>
+    </dl>
+  </fieldset>
+  <fieldset>
+    <legend><font size="4" color="#93f"><b>주문 정보 </b></font></legend>
+    <dl>
+      <dd>
+      <input type="checkbox" name="field" id="field" value="과테말라 안티구아(100g)">과테말라 안티구아(100g)
+      <input type="number" name="int" id="int1" size="3" value="0" min="0" max="10">개</br>
+      <input type="checkbox" name="field" id="field" value="인도네시아 만델링(100g)">인도네시아 만델링(100g)
+      <input type="number" name="int" id="int2" size="3" value="0" min="0" max="10">개</br>
+      <input type="checkbox" name="field" id="field" value="탐라는도다(블렌딩)(100g)">탐라는도다(블렌딩)(100g)
+      <input type="number" name="int" id="int3" size="3" value="0" min="0" max="10">개</br></dd>
+    </dl>
+  </fieldset>
+  &nbsp;<input type="submit" name="order" id="order" value="주문하기"/>&nbsp;<input type="reset" name="reset" id="reset" value="다시작성">
+</body>
+</html>

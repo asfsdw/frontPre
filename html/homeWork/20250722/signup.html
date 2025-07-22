@@ -2,14 +2,26 @@
 <head>
 </head>
 <body>
-  <form>
+  <form post>
+  </br>
     <fieldset>
-      <legend><font size="4" color="blue"><b>�α���</b></font></legend>
-      <label for="mid">���̵�</label>
-      <input type="text" name="mid" id="mid" autofocus />
-      <label for="pwd">��й�ȣ</label>
-      <input type="password" name="pwd" id="pwd" />
-      <input type="submit" value="�α���" />&nbsp;
+      <legend><font size="4" color="blue"><b>회원가입</b></font></legend>
+      <label for="mid">아이디 <font color="red">*</font></label>
+      <input type="text" name="mid" id="mid" placeholder="여백없이 입력하세요." required /><br/>
+      <label for="pwd">비밀번호 <font color="red">*</font></label>
+      <input type="password" name="pwd" id="pwd" placeholder="여백없이 입력하세요." required /></br>
+      <label for="pwd">비밀번호 확인 <font color="red">*</font></label>
+      <input type="password" name="pwd" id="pwd" placeholder="여백없이 입력하세요." required /></br>
+      <label for="name">이름 <font color="red">*</font></label>
+      <input type="text" name="name" id="name" placeholder="여백없이 입력하세요." required /></br>
+      <label for="email">메일 주소 <font color="red">*</font></label>
+      <input type="email" name="email" id="email" placeholder="여백없이 입력하세요." required></br>
+      <label for="tel">전화번호</label>
+      <input type="tel" name="tel" id="tel" placeholder="여백없이 입력하세요."></br>
+    </fieldset>
+  </br>
+    <fieldset>
+      <input type="submit" value="가입하기">&nbsp;<input type="reset" value="다시쓰기">
     </fieldset>
   </form>
 </body>

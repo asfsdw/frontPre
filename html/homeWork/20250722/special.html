@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <fieldset>
+    <legend><font size="4"><b>수강과목</b></font></legend>
+    <dl>
+    <dd><font color="green">영어회화(초급)</font>
+    <input type="time" name="subtime" id="subtime" value="09:00"></dd>
+    </dl>
+  </fieldset>
+  <fieldset>
+    <legend><font size="4"><b>신청자</b></font></legend>
+    <dl>
+      <dd><font color="green">이름</font>
+      <input type="text" name="name" id="name" required></dd>
+      <dd><font color="green">학번</font>
+      <input type="number" name="int" id="int" required></dd>
+      <dd><font color="green">학과</font>
+      <select name="subject" id="subject">
+        <option>컴퓨터공학과</option>
+        <option>기계공학과</option>
+        <option>전자공학과</option>
+        <option>토목공학과</option>
+        <option>건축공학과</option>
+      </select></dd>
+      <dd><font color="green">연락처</font>
+      <input type="tel" name="tel" id="tel" required></dd>
+    </dl>
+  </fieldset>
+  &nbsp;<input type="submit" value="신청하기">&nbsp;<input type="reset" value="다시쓰기">
+</body>
+</html>
