@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>transition</title>
+  <style>
+    div#area {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+    div#area:hover {
+      width: 300px;
+      transition: width 2s;
+    }
+  </style>
+</head>
+<body>
+  <h2>트랜지션 애니메이션</h2>
+  <p>아래 영역에 마우스를 올려보세요.</p>
+  <div id="area"></div>
+</body>
+</html>

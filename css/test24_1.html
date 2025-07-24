@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fullDown</title>
+  <style>
+    body, ul, li {
+      margin: 0px;
+      padding: 0px;
+      list-style: none;
+    }
+    a {
+      color: inherit; /*inherit: 상속 받는 것들도 공유한다.*/
+      text-decoration: inherit;
+    }
+    
+    .menu {
+      text-align: center;
+    }
+    .menu > ul {
+      background-color: #ddd;
+      display: inline-block;
+    }
+    .menu > ul > li {
+      display: inline-block;
+    }
+    .menu > ul > li > a {
+      display: inline-block;
+      padding: 10px;
+    }
+    .menu > ul > li:hover > a {
+      background-color: #000;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <nav class="menu">
+    <ul>
+      <li><a href="#">주메뉴1</a></li>
+      <li><a href="#">주메뉴2</a></li>
+      <li><a href="#">주메뉴3</a></li>
+      <li><a href="#">주메뉴4</a></li>
+      <li><a href="#">주메뉴5</a></li>
+    </ul>
+  </nav>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fullDown</title>
+  <style>
+    body, ul, li {
+      margin: 0px;
+      padding: 0px;
+      list-style: none;
+      font-size: 1em;
+    }
+    a {
+      color: inherit; /*inherit: 상속 받는 것들도 공유한다.*/
+      text-decoration: inherit;
+    }
+    
+    .menu {
+      position: fixed;
+      z-index: 99;
+    }
+    .menu > ul {
+      background-color: #ddd;
+      height: 40px;
+      padding: 0px;
+      text-align: center;
+    }
+    .menu ul li { /*주메뉴*/
+      float: left;
+      width: 120px;
+    }
+    .menu ul li a {
+      display: block;
+      line-height: 40px;
+    }
+    .menu > ul > li:hover {
+      background-color: #000;
+      color: white;
+    }
+
+    .menu ul ul { /*세부메뉴*/
+      display: none;
+      width: 120px;
+      padding: 0px;
+      margin: 0 0 -5px 0; /*주메뉴 펼쳤을 때, 세부메뉴 아래에 주메뉴의 bgc가 튀어나와서 마진을 줄여 없앤다.*/
+    }
+    .menu ul li:hover ul {
+      display: inline-block;
+    }
+    .menu ul li ul li {
+      background-color: #ddd;
+      color: #000;
+    }
+    .menu ul li ul li:hover {
+      background-color: #000;
+      color: #fff;
+    }
+    .active {
+      background-color: goldenrod;
+    }
+    #content {
+      position: absolute;
+      top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu">
+    <ul>
+      <li><a href="#home" class="active">홈으로</a></li>
+      <li><a href="#">주메뉴1</a>
+        <ul>
+          <li><a href="#">세부메뉴1</a></li>
+          <li><a href="#">세부메뉴2</a></li>
+          <li><a href="#">세부메뉴3</a></li>
+          <li><a href="#">세부메뉴4</a></li>
+        </ul>
+      </li>
+      <li><a href="#">주메뉴2</a>
+        <ul>
+          <li><a href="#">세부메뉴1</a></li>
+          <li><a href="#">세부메뉴2</a></li>
+          <li><a href="#">세부메뉴3</a></li>
+          <li><a href="#">세부메뉴4</a></li>
+        </ul>
+      </li>
+      <li><a href="#">주메뉴3</a>
+        <ul>
+          <li><a href="#">세부메뉴1</a></li>
+          <li><a href="#">세부메뉴2</a></li>
+          <li><a href="#">세부메뉴3</a></li>
+          <li><a href="#">세부메뉴4</a></li>
+        </ul>
+      </li>
+      <li><a href="#">주메뉴4</a>
+        <ul>
+          <li><a href="#">세부메뉴1</a></li>
+          <li><a href="#">세부메뉴2</a></li>
+          <li><a href="#">세부메뉴3</a></li>
+          <li><a href="#">세부메뉴4</a></li>
+        </ul>
+      </li>
+      <li><a href="#">주메뉴5</a>
+        <ul>
+          <li><a href="#">세부메뉴1</a></li>
+          <li><a href="#">세부메뉴2</a></li>
+          <li><a href="#">세부메뉴3</a></li>
+          <li><a href="#">세부메뉴4</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div id="content">
+    <p>이곳은 Home 화면의 본문입니다.</p>
+    <div>
+      <img src="../images/03.jpg" width="300px" />
+    </div>
+  </div>
+</body>
+</html>

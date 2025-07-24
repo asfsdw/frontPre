@@ -1,0 +1,32 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-size: 1.0em;
+}
+.container {
+  display: grid;
+  /*기본방향: 열*/
+  /* grid-template-columns: auto auto auto auto; */
+  /*수치를 준 만큼 나눈다.*/
+  grid-template-columns: 180px auto 150px;
+  /* grid-template-columns: 180px 800px 150px; */
+  grid-template-rows: 180px 600px 100px;
+
+  /* justify-content: space-around; */
+  /* justify-content: space-between; */
+  justify-content: space-evenly;
+}
+.item {
+  padding: 10px;
+  text-align: center;
+}
+.item01 {background-color: antiquewhite;}
+.item02 {background-color: aqua;}
+.item03 {background-color: blue;}
+.item04 {background-color: blueviolet;}
+.item05 {background-color: brown;}
+.item06 {background-color: burlywood;}
+.item07 {background-color: cadetblue;}
+.item08 {background-color: chartreuse;}
+.item09 {background-color: chocolate;}
+.item10 {background-color: cornflowerblue;}

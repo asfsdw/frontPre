@@ -1,0 +1,211 @@
+/*공통사항 (기본 PC모드에서 출발)*/
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "맑은 고딕","굴림","돋음","궁서";
+  font-size: 1.0em;
+  background: linear-gradient(to bottom, skyblue, white 50%);
+  background-attachment: fixed;
+}
+ul li {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+a {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+/*pc모드 기본 설계*/
+#container {
+  width: 960px;
+  margin: 0 auto;
+  background-color: white;
+  border: 1px solid #ccc;
+}
+
+/*header*/
+#mainHeader {
+  height: 280px;
+  margin-top: 0px;
+  background-image: url(../images/10.jpg);
+}
+.header1 {
+  position: absolute;
+  margin-top: 40px;
+  margin-left: 20px;
+}
+.header1 a {
+  color: yellow;
+  font-size: 2.0em;
+  text-shadow: 1px 2px 1px black; /*x, y, 크기, 색상*/
+}
+
+/*메뉴*/
+#mainNav {
+  background-color: green;
+  width: 960px;
+  height: 60px;
+}
+#mainNav ul {
+  text-align: center;
+  margin: 0px;
+}
+#mainNav ul li {
+  float: left;
+  width: 100px;
+  height: 40px;
+  font-size: 1.1em;
+  padding: 20px 0 0 90px;
+}
+#mainNav ul li a {
+  display: block;
+  color: white;
+  font-weight: bolder;
+}
+#mainNav ul li a:hover {
+  color: blue;
+}
+
+/*본문*/
+#content {
+  width: 720px;
+  float: left;
+  background-color: white;
+  padding-left: 10px;
+}
+.notice li {
+  list-style: circle;
+}
+
+/*어사이드(그림, 광고)*/
+#sidebar {
+  width: 200px;
+  float: right;
+  padding: 20px 10px;
+}
+#sidebar img {
+  margin-bottom: 12px;
+  border: 1px solid #aaa;
+}
+#sidebar img:hover {
+  border: 1px solid black;
+  opacity: 0.8;
+}
+
+/*푸터*/
+#footer {
+  clear: both;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 5px 0px 20px 0px;
+}
+
+/*태블릿 화면 설정*/
+@media screen and (min-width: 600px) and (max-width: 1023px) {
+  #container {
+    width: 580px;
+  }
+
+  /*header*/
+  #mainHeader {
+    height: 170px;
+    background-image: url(../images/11.jpg);
+  }
+  .header1 {
+    margin-top: 20px;
+  }
+  .header1 a {
+    font-size: 1.5em;
+  }
+
+  /*메뉴*/
+  #mainNav {
+    width: 580px;
+  }
+  #mainNav ul li {
+    width: 90px;
+    font-size: 1.0em;
+    padding: 20px 0 0 30px;
+  }
+
+  /*본문*/
+  #content {
+    width: 550px;
+  }
+
+  /*어사이드(그림, 광고)*/
+  #sidebar {
+    width: 550px;
+    padding: 0px 10px;
+  }
+  #sidebar img {
+    width: 32%;
+  }
+
+  /*푸터*/
+  #footer {
+    padding: 5px 0px 20px 0px;
+    font-size: 0.8em;
+  }
+}
+
+/*모바일 화면 설정*/
+@media screen and (max-width: 599px) {
+  #container {
+    width: 320px;
+  }
+
+  /*header*/
+  #mainHeader {
+    height: 90px;
+    background-image: url(../images/12.jpg);
+  }
+  .header1 {
+    margin-top: 15px;
+  }
+  .header1 a {
+    font-size: 0.8em;
+  }
+
+  /*메뉴*/
+  #mainNav {
+    width: 320px;
+    height: 0px;
+  }
+  #mainNav ul li {
+    width: 280px;
+  }
+  #mainNav ul li a {
+    display: block;
+    color: brown;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 0 100px 0 -120px;
+    padding: 10px 0;
+    font-size: 0.92em;
+  }
+
+  /*본문*/
+  #content {
+    width: 310px;
+    margin-top: 10px;
+  }
+
+  /*어사이드(그림, 광고)*/
+  #sidebar {
+    width: 320px;
+    margin-top: 10px;
+  }
+  #sidebar img {
+    width: 98%;
+    margin-left: 12px;
+  }
+
+  /*푸터*/
+  #footer {
+    font-size: 0.6em;
+  }
+}

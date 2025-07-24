@@ -1,0 +1,52 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-size: 1.0em;
+}
+.container {
+  height: 100vh;
+  background-color: gray;
+  display: flex;
+  /*기본방향: 행*/
+  /* flex-direction: row; */
+  /*행방향으로 변경*/
+  /* flex-direction: column; */
+  /*열방향으로 변경*/
+  /* flex-direction: row-reverse; */
+  /*행방향 거울상으로 변경*/
+  /* flex-direction: column-reverse; */
+  /*열방향 거울상으로 변경*/
+  flex-wrap: wrap;
+  /*크기 유지 밑으로 내려감*/
+  /* justify-content: flex-start; */
+  /*왼쪽 정렬로 변경*/
+  /* justify-content: flex-end; */
+  /*오른쪽 정렬로 변경*/
+  /* justify-content: center; */
+  /*가운데 정렬로 변경*/
+  /* justify-content: space-around; */
+  /*앞 뒤, 사이에 공백주기*/
+  /* justify-content: space-between;
+  /*사이에 공백주기*/
+  justify-content: space-evenly;
+  /*앞, 뒤, 사이에 공백주기*/
+
+  /* align-items: baseline; */
+  /*상단 정렬로 변경*/
+  /* align-items: center; */
+  /*중단 정렬로 변경*/
+  align-items: end;
+  /*하단 정렬로 변경*/
+}
+.item01 {background-color: antiquewhite;}
+.item02 {
+  background-color: aqua; width: 150px; height: 150px;
+}
+.item03 {background-color: blue;}
+.item04 {background-color: blueviolet;}
+.item05 {background-color: brown;}
+.item06 {background-color: burlywood;}
+.item07 {background-color: cadetblue;}
+.item08 {background-color: chartreuse;}
+.item09 {background-color: chocolate;}
+.item10 {background-color: cornflowerblue;}

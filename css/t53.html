@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mediaQuery</title>
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
+    .container {
+      width: 1000px;
+      margin: 0 auto;
+      font-size: 1.5em;
+      background-color: #eee;
+      border: 2px solid gray;
+    }
+    div#area {
+      width: 960px;
+      height: 350px;
+      margin: 0 auto;
+      background-color: violet;
+    }
+    #tbl {
+      width: 960px;
+      height: 450px;
+      margin: 0 auto;
+      background-color: cyan;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #aaa;
+      text-align: center;
+    }
+    div#img {
+      text-align: center;
+    }div#img img {
+      width: 1000px;
+      text-align: center;
+    }
+
+    /*미디어쿼리*/
+    /* <meta name="viewport" content="width=device-width, initial-scale=1.0(100%)"> 미디어쿼리를 쓰려면 반드시 필요하다.*/
+    @media screen and (max-width:1024px) { /*모니터의 가로가 1024미만일 때*/
+      .container {
+      width: 700px;
+      margin: 0 auto;
+      font-size: 1.0em;
+      background-color: #ccc;
+      border: 2px solid gray;
+      }
+      div#area {
+        width: 680px;
+        height: 400px;
+        margin: 0 auto;
+        background-color: brown;
+      }
+      #tbl {
+        width: 680px;
+        height: 350px;
+        margin: 0 auto;
+        background-color: burlywood;
+        border-collapse: collapse;
+      }
+      div#img img {
+        width: 700px;
+        text-align: center;
+      }
+    }
+
+    @media screen and (max-width:768px) { /*모니터의 가로가 768미만일 때*/
+      .container {
+      width: 360px;
+      margin: 0 auto;
+      font-size: 0.7em;
+      background-color: #eee;
+      border: 2px solid gray;
+      }
+      div#area {
+        width: 340px;
+        height: 180px;
+        margin: 0 auto;
+        background-color: cadetblue;
+      }
+      #tbl {
+        width: 340px;
+        height: 180px;
+        margin: 0 auto;
+        background-color: darkolivegreen;
+        border-collapse: collapse;
+      }
+      div#img img {
+        width: 360px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>미디어쿼리 연습</h2>
+    <p>반응형 웹사이트: Responsive Web Site</p>
+    <hr/>
+    <ul>
+      <li>데스크탑: 1024px or 1200px 이상</li>
+      <li>테블릿: 768px or 992px 이상</li>
+      <li>모바일: 그 외</li>
+    </ul>
+    <hr/>
+    <div>이곳은 반응형 웹사이트를 위한 화면입니다.</div>
+    <hr/>
+    <div id="area"></div>
+    <hr/>
+    <table id="tbl">
+      <tr>
+        <th>주제</th>
+        <th>강사</th>
+        <th>장소</th>
+      </tr>
+      <tr>
+        <td>웹 표준에 대하여</td>
+        <td>김말숙</td>
+        <td>그린아카데미</td>
+      </tr>
+      <tr>
+        <td>Java프로그래밍</td>
+        <td>강현모</td>
+        <td>그린 402호</td>
+      </tr>
+    </table>
+    <hr/>
+    <div id="img">
+      <img src="../images/03.jpg" />
+    </div>
+  </div>
+</body>
+</html>

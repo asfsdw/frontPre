@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>box-sizing</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    .box {
+      float: left;
+      width: 33.33%;
+      padding: 50px;
+    }
+    .imgBox {
+      float: left;
+      width: 33.33%;
+      padding: 5px;
+    }
+    .container::after { /*after:이 클래스 후에. before:이 클래스 전에. content:이 클래스와 함께.*/
+      clear: both;
+      display: table;
+      content: ""; /*내용추가(이 경우 공백)*/
+    }
+    .container2::after { /*after:이 클래스 후에. before:이 클래스 전에. content:이 클래스와 함께.*/
+      clear: both;
+      display: table;
+      content: ""; /*내용추가(이 경우 공백)*/
+    }
+    #imgTest::before {
+      content: "♥ ";
+    }
+    #imgTest::selection { /*드래그했을 때*/
+      color: white;
+      background-color: greenyellow;
+    }
+  </style>
+</head>
+<body>
+  <h2>box-sizing 연습</h2>
+  <div class="container">
+    <div class="box" style="background-color: aquamarine;"><p>1.이곳은 박스 안쪽입니다.</p></div>
+    <div class="box" style="background-color: blueviolet;"><p>2.이곳은 박스 안쪽입니다.</p></div>
+    <div class="box" style="background-color: chartreuse;"><p>3.이곳은 박스 안쪽입니다.</p></div>
+  </div>
+  <hr id="footer">
+  <p>
+    <span id="imgTest">참고</span>: 브라우저의 폭을 마우스로 움직이여보세요.
+  </p>
+  <hr/>
+  <div class="container2">
+    <div class="imgBox"><img src="../images/01.png" width="200px" /></div>
+    <div class="imgBox"><img src="../images/02.png" width="200px" /></div>
+    <div class="imgBox"><img src="../images/03.png" width="200px" /></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-size: 1.0em;
+}
+.container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  gap: 3px;
+}
+.item {
+  padding: 10px;
+  text-align: center;
+}
+
+.item01 {
+  background-color: antiquewhite;
+  grid-column: 1 / span 5; /*셀 선택 / 셀 몇 개분 키울지*/
+}
+.item02 {
+  background-color: aqua;
+  grid-row: 2 / span 4;
+}
+.item03 {
+  background-color: blue;
+  grid-column: 2 / span 3;
+}
+.item04 {
+  background-color: blueviolet;
+  grid-row: 2 / span 4;
+}
+.item05 {background-color: brown;}
+.item06 {
+  background-color: burlywood;
+}
+.item07 {background-color: cadetblue;}
+.item08 {background-color: chartreuse;}
+.item09 {background-color: chocolate;}
+.item10 {background-color: cornflowerblue;}

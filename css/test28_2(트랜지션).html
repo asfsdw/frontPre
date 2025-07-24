@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>transition</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+    div:hover {
+      width: 300px;
+      transition: width 2s;
+    }
+    div#bb1 {
+      transition-timing-function: linear;
+    }
+    div#bb2 {
+      transition-timing-function: ease;
+    }
+    div#bb3 {
+      transition-timing-function: ease-in;
+    }
+    div#bb4 {
+      transition-timing-function: ease-out;
+    }
+    div#bb5 {
+      transition-timing-function: step-end;
+    }
+
+    div#cc1 {
+      transition: width 2s, height 2s, transform 2s;
+    }
+    div#cc1:hover {
+      width: 300px;
+      height: 300px;
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+<body>
+  <h2>트랜지션 애니메이션</h2>
+  <p>아래 영역에 마우스를 올려보세요.</p>
+  <div id="area"></div>
+  <hr/>
+  <div id="bb1"></div>
+  <div id="bb2"></div>
+  <div id="bb3"></div>
+  <div id="bb4"></div>
+  <div id="bb5"></div>
+  <hr/>
+  <div id="cc1"></div>
+</body>
+</html>

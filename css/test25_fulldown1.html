@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test25_fulldown1.html</title>
+  <style>
+    body, ul, li {
+      margin: 0px;
+      padding: 0px;
+      list-style: none;
+      font-size: 0.95em;
+    }
+    a {
+      color: inherit;
+      text-decoration: inherit;
+    }
+
+    .menu {
+      position: fixed;
+      z-index: 99;
+    }
+    .menu > ul {
+      background-color: #ddd;
+      height: 40px;
+      padding: 0px;
+      text-align: center;
+    }
+    .menu ul li {
+      float: left;
+      width: 120px;
+    }
+    .menu ul li a {
+      display: block;
+      padding: 0px 20px;
+      line-height: 40px;
+
+    }
+    .menu ul li a:hover {
+      background-color: green;
+      color: #fff;
+    }
+
+    /* 하위 메뉴 */
+    .menu ul ul {
+      display: none;
+      width: 120px;
+      padding: 0px;
+    }
+    .menu ul li:hover ul {
+      display: inline-block;
+    }
+    .menu ul li ul li {
+      background-color: #ccc;
+    }
+    .active {
+      background-color: goldenrod;
+    }
+    #content {
+      position: fixed;
+      top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu">
+    <ul>
+      <li><a href="#home" class="active">홈으로</a></li>
+      <li><a href="#">주메뉴연습1</a>
+        <ul>
+          <li><a href="#">서브메뉴1</a></li>
+          <li><a href="#">서브메뉴2</a></li>
+          <li><a href="#">서브메뉴3</a></li>
+          <li><a href="#">서브메뉴4</a></li>
+        </ul>
+      </li>
+      <li><a href="#">주메뉴연습2</a>
+        <ul>
+          <li><a href="#">서브메뉴1</a></li>
+          <li><a href="#">서브메뉴2</a></li>
+          <li><a href="#">서브메뉴3</a></li>
+        </ul>
+      </li>
+      <li><a href="#">주메뉴연습3</a>
+        <ul>
+          <li><a href="#">서브메뉴1</a></li>
+          <li><a href="#">서브메뉴2</a></li>
+        </ul>
+      </li>
+      <li><a href="#">주메뉴연습4</a>
+        <ul>
+          <li><a href="#">서브메뉴1</a></li>
+          <li><a href="#">서브메뉴2</a></li>
+          <li><a href="#">서브메뉴3</a></li>
+          <li><a href="#">서브메뉴4</a></li>
+        </ul>
+      </li>
+      <li><a href="#">주메뉴연습5</a>
+        <ul>
+          <li><a href="#">서브메뉴1</a></li>
+          <li><a href="#">서브메뉴2</a></li>
+          <li><a href="#">서브메뉴3</a></li>
+          <li><a href="#">서브메뉴4</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div id="content">
+    <p>이곳은 HOME화면의 본문 입니다.</p>
+    <div>
+      <img src="../images/03.jpg" width="300px"/>
+    </div>
+  </div>
+</body>
+</html>

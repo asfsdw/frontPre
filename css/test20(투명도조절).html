@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>불투명도(Opacity)</title>
+  <style>
+    img {
+      opacity: 0.5;
+    }
+    img:hover {
+      opacity: 1.0;
+    }
+
+    img.imgO {
+      opacity: 1.0;
+    }
+    img.imgO:hover {
+      opacity: 0.5;
+    }
+  </style>
+</head>
+<body>
+  <h2>이미지 투명도(Transparency)</h2>
+    <div class="container1">
+    <img src="../images/01.png" width="200px" height="170px" />
+    <img src="../images/02.png" width="200px" height="170px" />
+    <img src="../images/03.png" width="200px" height="170px" />
+  </div>
+    <div class="container2">
+    <img src="../images/01.png" class="imgO" width="200px" title="일번" height="170px" />
+    <img src="../images/02.png" class="imgO" width="200px" title="이번" height="170px" />
+    <img src="../images/03.png" class="imgO" width="200px" title="삼번" height="170px" />
+  </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>그라데이션</title>
+  <style>
+    .item {
+      width: 400px;
+      height: 200px;
+      border: 1px solid gray;
+    }
+    #item1 {
+      background-color: green;
+    }
+    #item2 {
+      /* background: linear-gradient(to bottom, #f00, #ff0); */
+      /* background: linear-gradient(to top, #f00, #ff0); */
+      /* background: linear-gradient(to left, #f00, #ff0); */
+      background: linear-gradient(to right, #f00, #ff0);
+    }
+    #item3 {
+      background: linear-gradient(45deg, #f00, #ff0); /*각도를 줄 수도 있다.*/
+    }
+    #item4 {
+      background: radial-gradient(circle, #f00, #ff0);
+    }
+    #item5 {
+      background: radial-gradient(circle, #f00, #fff);
+      border: 0px;
+    }
+    #item6 {
+      background: radial-gradient(at right top, #f00, #fff);
+      border: 0px;
+    }
+
+    table {
+      width: 400px;
+      height: 300px;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 20px;
+      text-align: center;
+      border: 1px solid gray;
+    }
+    thead {
+      background: linear-gradient(to bottom, #f00, #fff, #ff0);
+    }
+  </style>
+</head>
+<body>
+  <h2>그라데이션 연습</h2>
+  <div class="item" id="item1">연습1</div>
+  <div class="item" id="item2">연습2</div>
+  <div class="item" id="item3">연습3</div>
+  <div class="item" id="item4">연습4</div>
+  <div class="item" id="item5">연습5</div>
+  <div class="item" id="item6">연습6</div>
+  <hr/>
+  <table>
+    <thead>
+      <tr>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>00</td>
+        <td>01</td>
+        <td>02</td>
+        <td>03</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td>21</td>
+        <td>22</td>
+        <td>23</td>
+      </tr>
+      <tr>
+        <td>30</td>
+        <td>31</td>
+        <td>32</td>
+        <td>33</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
