@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>선택자</title>
+  <style>
+    p {
+      font-size: 1em;
+      color: green;
+    }
+    #sample {
+      color: red;
+      font-family: '고딕','궁서','굴림';
+    }
+    #sample2 {
+      color: orange;
+      font-weight: bolder;
+    }
+    #sample3 {
+      color: orange;
+      font-weight: bold;
+    }
+    .test1 {
+      font-weight: lighter;
+      background-color: aqua;
+      color: red;
+    }
+    .test2 {
+      font-style: italic;
+      background-color: green;
+      color: violet;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h2>클래스 셀렉터</h2>
+  <!-- 클래스 선택자는 '.'으로 선언한다. -->
+<!-- id는 본문에 한 번만 나와야 스크립트에서 오류가 안 뜨지만, class는 여러번 써도 된다. -->
+  <p>1.안녕하세요.</p>
+  <p id="sample">2.안녕하세요.</p>
+  3.안녕하세요.<br/>
+  <p>4.안녕하세요.</p>
+  5.안녕하세요.<br/>
+  <p id="sample">6.안녕하세요.</p>
+  7.안녕하세요.<br/>
+  <p id="sample2">8.안녕하세요.</p>
+  <p id="sample3">9.안녕하세요.</p>
+  <p id="test1">10.안녕하세요.</p>
+  <sapn class="test2">11.안녕하세요.</sapn>
+  <div class="test1">12.안녕하세요.</div>
+  13.안녕하세요.<br/>
+  <p class="test2">14.안녕하세요.</p>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Box 연습</title>
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
+    li {
+      list-style: none;
+    }
+    div {
+      width: 200px;
+      height: 200px;
+      margin: 10px 20px 30px 40px;
+      padding: 0px 20px 30px;
+      text-align: center;
+      vertical-align: middle; /*표에서만 적용 가능하다.*/
+    }
+    .a01 {
+      background-color: red;
+      height: 92px;
+      padding-top: 108px;
+    }
+    .a02 {
+      background-color: orange;
+      position: relative; /*상대좌표*/
+      left: 50px;
+      top: 100px;
+    }
+    .a03 {
+      background-color: yellow;
+      position: absolute; /*절대좌표:부모 기준으로 고정*/
+      left: 200px;
+      top: 280px;
+      z-index: 1; /*숫자가 높을 수록 우선도 상승.*/
+    }
+    .a04 {
+      background-color: green;
+      position: fixed; /*절대좌표:브라우저 기준으로 고정*/
+      left: 200px;
+      top: 280px;
+      z-index: -1; /*기본이 0이다.*/
+    }
+    .a05 {
+      background-color: blue;
+    }
+    .a06 {
+      background-color: mediumblue;
+    }
+    .a07 {
+      background-color: violet;
+    }
+    .a08 {
+      background-color: blanchedalmond;
+    }
+    .a09 {
+      background-color: brown;
+    }
+    .a10 {
+      background-color: chocolate;
+    }
+  </style>
+</head>
+<body>
+  <h2>위치(position)</h2>
+  <p>static, relative, absolute, fixed</p>
+  <div class="a01">01</div>
+  <div class="a02">02</div>
+  <div class="a03">03</div>
+  <div class="a04">04</div>
+  <div class="a05">05</div>
+  <div class="a06">06</div>
+  <div class="a07">07</div>
+  <div class="a08">08</div>
+  <div class="a09">09</div>
+  <div class="a10">10</div>
+  <p>
+    <ul>
+      <li>사과</li>
+      <li>배</li>
+      <li>바나나</li>
+      <li>수박</li>
+      <li>참외</li>
+    </ul>
+  </p>
+</body>
+</html>

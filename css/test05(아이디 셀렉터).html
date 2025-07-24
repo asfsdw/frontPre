@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>선택자</title>
+  <style>
+    p {
+      font-size: 1em;
+      color: green;
+    }
+    #sample {
+      color: red;
+      font-family: '고딕','궁서','굴림';
+      /* 폰트 바꾸기. 우선순위 1, 2, 3 */
+    }
+    /* 같은 아이디를 주면 똑같이 색이 바뀌지만, 스크립트를 쓰려고 할 때는 에러를 뱉기 때문에 같은 아이디는 쓰지 않도록 한다. */
+    #sample2 {
+      color: orange;
+      font-weight: bolder;
+    }
+    #sample3 {
+      color: orange;
+      font-weight: bold;
+    }
+    #test1 {
+      font-weight: lighter;
+      background-color: aqua;
+      color: red;
+    }
+    #test2 {
+      font-style: italic;
+      background-color: green;
+      color: violet;
+    }
+  </style>
+</head>
+<body>
+  <h2>아이디 셀렉터</h2>
+  <p>1.안녕하세요.</p>
+  <p id="sample">2.안녕하세요.</p>
+  3.안녕하세요.<br/>
+  <p>4.안녕하세요.</p>
+  5.안녕하세요.<br/>
+  <p id="sample">6.안녕하세요.</p>
+  7.안녕하세요.<br/>
+  <p id="sample2">8.안녕하세요.</p>
+  <p id="sample3">9.안녕하세요.</p>
+  <p id="test1">10.안녕하세요.</p>
+  <!-- 문단 -->
+  <sapn id="test2">11.안녕하세요.</sapn>
+  <!-- 단어 -->
+  <div id="test1">12.안녕하세요.</div>
+  <!-- 위아래 붙은 문단 -->
+  13.안녕하세요.<br/>
+</body>
+</html>

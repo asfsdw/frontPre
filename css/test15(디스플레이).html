@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>디스플레이</title>
+  <style>
+    .aa1,.aa2,.aa3 {
+      background-color: aqua;
+      display: inline;
+    }
+    .aa4 {
+      background-color: bisque;
+      /* display: none; 영역도 사라진다.*/
+      /* visibility: hidden; 영역이 남는다.*/
+    }
+    .aa5,.aa6,.aa7 {
+      background-color: darkkhaki;
+      border: 1px solid red;
+      width: 300px;
+    }
+    .bb1 {
+      display: inline-Block; /*영역을 가진 채로 인라인으로 바꾼다.*/
+      /* display: block; */
+      display: inline;
+      border: 1px solid yellow;
+      padding: 10px;
+    }
+    .bb1:hover {
+      background-color: orange;
+      cursor: pointer;
+    }
+    .bb2 {
+      display: inline;
+      /* display: block; */
+      /* display: inline-block; */
+      border: 1px solid yellow;
+      padding: 10px;
+    }
+    .bb2:hover {
+      background-color: orange;
+      cursor: pointer;
+    }
+    .bb3 {
+      /* display: inline; */
+      /* display: block; */
+      /* display: inline-block; */
+      border: 1px solid yellow;
+      padding: 10px;
+    }
+    .bb2:hover {
+      background-color: orange;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2>Display 속성</h2>
+  <p>각각의 요소들을 어떻게 보여줄지를 결정한다.</p>
+  <p>
+    <b>Display 속성</b>
+    none: 화면에서 완전히 사라지게 한다.
+  </p>
+  <hr/>
+  <h3>사용 예</h3>
+  <div class="aa1">1.안녕</div>
+  <div class="aa2">2.안녕</div>
+  <div class="aa3">3.안녕</div>
+  <div class="aa4">4.안녕</div>
+  <hr/>
+  <h2>Block / Inline / Inline-Block</h2>
+  <div class="aa5">
+    5.<font color="red" class="bb1">안녕.(Inline)</font> 감사합니다.
+  </div>
+  <div class="aa6">
+    6.<span class="bb2"><font color="blue">안녕.(Inline-Block)</font> 감사합니다.</span>
+  </div>
+  <div class="aa7">
+    7.<span class="bb3"><font color="green">안녕.(Block)</font> 감사합니다.</span>
+  </div>
+</body>
+</html>

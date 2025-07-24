@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>테이블</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      height: 350px;
+    }
+    td, th {
+      /* border-width: 1px;
+      border-color: gray;
+      border-style: solid; */
+      text-align: center;
+      border: 1px solid green;
+      /* padding: 20px; */
+      /* 2개 적으면 상하 좌우
+         3개 적으면 상, 우, 하*/
+      background-color: aqua;
+    }
+    th {
+          height: 50px;
+          background-color: burlywood;
+    }
+    .a1030 {
+      vertical-align: bottom;
+      /* border-bottom: 5px double green; */
+    }
+    #a22 {
+      background-color: red;
+    }
+    td:hover {
+    background-color: lightgray;
+    }
+  </style>
+</head>
+<body>
+  <h2>표에 스타일 적용</h2>
+  <table>
+    <tr>
+      <th>제목1</th>
+      <th>제목2</th>
+      <th>제목3</th>
+    </tr>
+    <tr class="a1030">
+      <td>11</td>
+      <td>12</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td id="a22">22</td>
+      <td>23</td>
+    </tr>
+    <tr class="a1030">
+      <td>31</td>
+      <td>32</td>
+      <td>33</td>
+    </tr>
+  </table>
+</body>
+</html>
