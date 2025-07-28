@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <script type="text/javascript" language="javascript"> /*현재는 javascript가 기본이라 쓰지 않아도 된다.*/ -->
+  <script type="text/javascript" scr="text01.js">
+    window.document.write("1.안녕하세요.<br/>");
+    //window객체는 생략가능.
+    document.write("<p>2.안녕하세요.</p>");
+    document.write("3.이곳은 javascript 안쪽 영역입니다.");
+  </script>
+</head>
+<body>
+  <h2>이곳은 body태그 안쪽 영역입니다.</h2>
+  <script>
+    document.write("이곳은 본분의 마지막 위치입니다.")
+  </script>
+</body>
+  <script>
+    document.write("이곳은 body 태그 밖쪽 위치입니다.")
+  </script>
+</html>

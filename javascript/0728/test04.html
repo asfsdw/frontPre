@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>함수</title>
+  <script>
+    document.write("안녕.1<br/>")
+    atom1();
+    atom2();
+    
+    function atom1() {
+      document.write("안녕.2<br/>")
+    }
+    function atom2() {
+      document.write("안녕.3<br/>")
+    }
+
+    atom1();
+    atom2();
+    </script>
+</head>
+<body>
+  <h3>이곳은 body 영역입니다.</h3>
+  <script>
+    function atom2() {
+      document.write("안녕.4<br/>")
+    }
+    atom2();
+  </script>
+</body>
+</html>

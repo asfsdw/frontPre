@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>변수</title>
+  <script>
+    // 'use strict';
+    atom = 100;
+    console.log("atom:", atom);
+
+    var mbc = 200; // 같은 이름의 변수를 사용할 수 있다.
+    console.log("mbc:", mbc);
+    
+    let kbs = 300; // 같은 이름의 변수를 사용할 수 없다. ex: let kbs = 3.14;
+    console.log("kbs:", kbs);
+    
+    const sbs = 400; // static final. 처음 정한 값을 바꿀 수 없다.
+    console.log("sbs:", sbs);
+    
+    var mbc = 3.14;
+    console.log("mbc:", mbc);
+    
+    kbs = 3.14;
+    console.log("kbs:", kbs);
+    
+    // sbs = 3.14; 당장 에러는 뜨지 않지만, 실행하면 에러가 뜬다.
+
+    // 'use strict'; // 뒤에 쓰면 의미가 없다.
+    cjb = 500;
+    console.log("cjb:", cjb);
+
+  </script>
+</head>
+<body>
+  <h3>이곳은 body 영역입니다.</h3>
+</body>
+</html>
