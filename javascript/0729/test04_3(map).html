@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>array</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+    function mapCheck() {
+      let jsonToObject = [
+        {name: '홍길동', age: 25},
+        {name: '김말숙', age: 34},
+        {name: '이기자', age: 28},
+        {name: '소나무', age: 19},
+        {name: '김연아', age: 33},
+        {name: '오하늘', age: 43}
+      ];
+
+      console.log('실패');
+      let newObject = jsonToObject.map((data, i) => { // if로 거르지 않은 값들도 undefined로 들어온다.
+        console.log(data);
+        let resObject = {};
+        if(i%2 == 0) {
+          resObject[data.name] = data.age;
+          return resObject;
+        }
+      });
+      console.log(newObject);
+      
+      console.log('');
+      console.log('성공');
+      newObject = jsonToObject.filter((data, i) => i%2 == 0);
+      console.log(newObject);
+      
+      console.log('');
+      console.log('성공');
+      jsonToObject.filter((data, i) => i%2 == 0).map((data) => console.log(data));
+    }
+  </script>
+</head>
+<body>
+  <p><br/></p>
+  <div class="container">
+    <h3>map연습.</h3>
+    <input type="button" value="map호출" onclick="mapCheck()" class=" btn btn-success" />
+  </div>
+  
+  <script>
+  </script>
+</body>
+</html>

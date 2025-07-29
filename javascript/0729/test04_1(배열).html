@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>array</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+    let cnt = 0;
+    const arr1 = new Array();
+    console.log(`arr1:${arr1}`);
+    console.log(`arr1:${typeof(arr1)}`);
+    console.log(`arr1:${arr1.length}`);
+    console.log(`arr1[1]:${arr1[1]}`);
+    console.log('');
+    
+    const arr2 = [10, 3.14, '문자', true];
+    console.log(`arr2:${arr2}`);
+    console.log("arr2:",arr2);
+    console.log(`arr2:${arr2.length}`);
+    console.log(`arr2[1]:${arr2[1]}`);
+
+    console.log('');
+    for(var arr of arr2) { // of는 값을 가져온다.
+      console.log(`arr[${cnt}]:${arr}`);
+      cnt++;
+    }
+    cnt = 0;
+    console.log('');
+    for(var arr in arr2) { // in은 인덱스를 가져온다.
+      console.log(`arr[${cnt}]:${arr}`);
+      cnt++;
+    }
+
+    console.log('');
+    arr2.forEach(function(arr) {
+      console.log(arr);
+    });
+    console.log('');
+    arr2.forEach(function(arr, i) {
+      console.log(arr,':', i);
+    });
+
+    console.log('');
+    arr2.forEach(function(arr, i, array) { // 자료 내용, 인덱스 번호, 모든 정보.
+      console.log(arr,':', i, ':', array);
+    });
+    console.log('');
+    let data = '', index = '';
+    arr2.forEach((arr, i, array) => {
+      console.log(arr,':', i, ':', array);
+      data += arr + "/";
+      index += i + "/";
+    });
+
+    console.log(data);
+    console.log(index);
+  </script>
+</head>
+<body>
+  <p><br/></p>
+  <div class="container">
+    <h3>배열연습.</h3>
+  </div>
+  
+  <script>
+  </script>
+</body>
+</html>
