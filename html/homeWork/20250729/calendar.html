@@ -77,18 +77,14 @@
     const date = new Date();
     const year = date.getFullYear();
     const month = date.getMonth();
-    const day = date.getDate();
-    const week = date.getDay();
     document.getElementById("years").value = year;
     document.getElementById("months").value = month+1;
-    let weeks = ['일','월','화','수','목','금','토'];
     function createCalendar(years, months) {
       for(let i=1; i<=34; i++) {
         document.getElementById(""+i+"").innerText = '';
       }
       let firstDate = new Date(years, months-1);
       let lastDate = new Date(years, months, 0);
-      console.log(lastDate.getDate());
       document.getElementById(""+firstDate.getDay()+"").innerHTML = firstDate.getDate()+"";
       for(let i=1; i<lastDate.getDate(); i++) {
         document.getElementById(""+(i+firstDate.getDay())+"").innerHTML = i+1+"";

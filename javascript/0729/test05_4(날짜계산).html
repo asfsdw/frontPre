@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict'
+
+    let today = new Date();
+    let year = today.getFullYear();
+    let month = (today.getMonth()+1);
+    let date = today.getDate();
+    let lastDate = new Date(year, month, 0).getDate();
+    
+    function dateCheck() {
+      let str = '';
+      for(let i=2010; i<=2026; i++) {
+        if(year == i) str += `<option selected>${year}</option>`;
+        else str += `<option>${i}</option>`;
+      }
+      yyyy.innerHTML = str;
+      
+      str = '';
+      for(let i=1; i<=12; i++) {
+        if(month == i) str += `<option selected>${month}</option>`
+        else str += `<option>${i}</option>`
+      }
+      mm.innerHTML = str;
+      
+      str = '';
+      for(let i=1; i<=lastDate; i++) {
+        if(date == i) str += `<option selected>${date}</option>`
+        else str += `<option>${i}</option>`
+      }
+      dd.innerHTML = str;
+    }
+    function yearCheck() {
+      const yyyy = document.getElementById("yyyy");
+      const yyyyValue = yyyy.value;
+      yyyy.innerHTML = "";
+
+      for(let i=2000; i<=2026; i++) {
+        let opt = document.createElement("option");
+        opt.value = i;
+        opt.text = i;
+        if(yyyyValue == i) opt.selected = true;
+        yyyy.appendChild(opt);
+      }
+    }
+    function monthCheck() {
+      const mm = document.getElementById("mm");
+      const mmValue = mm.value;
+      mm.innerHTML = "";
+
+      for(let i=1; i<=12; i++) {
+        let opt = document.createElement("option");
+        opt.value = i;
+        opt.text = i;
+        if(mmValue == i) opt.selected = true;
+        mm.appendChild(opt);
+      }
+    }
+    function monthChange() {
+      const yyyy = document.getElementById("yyyy");
+      const yyyyValue = yyyy.value;
+      if(isNaN(yyyyValue)) {
+        alert("년도를 선택해주세요.");
+        return;
+      }
+      const mm = document.getElementById("mm");
+      const mmValue = mm.value;
+      const dd = document.getElementById("dd");
+      const ddValue = dd.value;
+      let lastDate = new Date(yyyyValue, mmValue, 0).getDate();
+      
+      for(let i=1; i<=lastDate; i++) {
+        let opt = document.createElement("option");
+        opt.value = i;
+        opt.text = i;
+        if(ddValue == i) opt.selected = true;
+        dd.appendChild(opt);
+      }
+    }
+    function dayCheck() {
+      const yyyy = document.getElementById("yyyy");
+      const yyyyValue = yyyy.value;
+      const mm = document.getElementById("mm");
+      const mmValue = mm.value;
+      const dd = document.getElementById("dd");
+      const ddValue = dd.value;
+      let lastDate = new Date(yyyyValue, mmValue, 0).getDate();
+      if(isNaN(yyyyValue)) {
+        alert("년도를 선택해주세요.");
+        return;
+      }
+      else if(isNaN(mmValue)) {
+        alert("월을 선택해주세요.");
+        return;
+      }
+      let str = '';
+      for(let i=1; i<=lastDate; i++) {
+        str += `<option selected>${i}</option>`
+      }
+      dd.innerHTML = str;
+    }
+    function calcDate() {
+      const yyyy = document.getElementById("yyyy");
+      const yyyyValue = yyyy.value;
+      const mm = document.getElementById("mm");
+      const mmValue = Number(mm.value -1);
+      const dd = document.getElementById("dd");
+      const ddValue = dd.value;
+      if(isNaN(yyyyValue)) {
+        alert("년도를 선택해주세요.");
+        return;
+      }
+      else if(isNaN(mmValue)) {
+        alert("월을 선택해주세요.");
+        return;
+      }
+      else if(isNaN(ddValue)) {
+        alert("일을 선택해주세요.");
+        return;
+      }
+      const nalsu = document.getElementById("nalsu");
+      const nalsuValue = parseInt(nalsu.value);
+      let newDate = new Date(yyyyValue, mmValue, ddValue);
+      newDate.setDate(newDate.getDate() + nalsuValue);
+      
+      let str = newDate.getFullYear()+'-'
+        +((newDate.getMonth()+1) <= 9 ? "0"+(newDate.getMonth()+1) : (newDate.getMonth()+1))+'-'
+        +(newDate.getDate() <= 9 ? "0"+newDate.getDate() : newDate.getDate());
+
+      demo.innerHTML = `계산된 날자: <font color="red"><b>${str}</b></font>`;
+    }
+  </script>
+</head>
+<body>
+  <p><br/></p>
+  <div class="container">
+    <h3 class="mb-3">날짜함수연습.</h3>
+    <hr/>
+    <div class="input-group">
+      <select name="yyyy" id="yyyy" class="form-control" onclick="yearCheck()">
+        <option>년도 선택</option>
+      </select>
+      <div class="input-group-text">-</div>
+      <select name="mm" id="mm" class="form-control" onclick="monthCheck()" onchange="monthChange()">
+        <option>월 선택</option>
+      </select>
+      <div class="input-group-text">-</div>
+      <select name="dd" id="dd" class="form-control" onclick="dayCheck()">
+        <option>일 선택</option>
+      </select>
+      <input type="button" value="오늘날짜넣기" onclick="dateCheck()" class="btn btn-success ms-1">
+      <input type="button" value="새로고침" onclick="location.reload()" class="btn btn-warning">
+    </div>
+    <hr/>
+    <div class="input-group">
+      <div class="input-group-text">계산할 일 수</div>
+      <input type="text" id="nalsu" name="nalsu" value="5" class="form-control" />
+      <input type="button" value="날짜계산" onclick="calcDate()" class="btn btn-primary" />
+    </div>
+    <hr/>
+    <div id="demo"></div>
+  </div>
+  <script>
+  </script>
+</body>
+</html>

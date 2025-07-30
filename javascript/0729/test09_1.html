@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>regularExpression</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="test09_1(정규식).js"></script>
+</head>
+<body>
+  <p><br/></p>
+  <div class="container">
+    <h3>정규식 연습.</h3>
+    <form name="myform" method="post">
+      <p><input type="text" name="content" id="content" autofocus required class="form-control"></p>
+      <!-- <p><textarea rows="4" name="content" id="content2" autofocus required class="form-control"></textarea></p> -->
+      <p><input type="button" value="정규식 체크" onclick="regExCheck()" class="btn btn-success form-control"></p>
+    </form>
+    <hr/>
+    <div id="demo"></div>
+    <hr/>
+    <pre class="mt-5">
+      자바형식: ^[]*$
+      자바스크립트형식: //플래그(플러그인), /[]/플래그
+      플래그(플로그인)
+        g(global): 작업대상 ? 전체범위.
+          ex: str.match(/a/) ? 최초 1회 검색만 수행.
+              str.match(/a/g) ? 모든 문자열 검색 수행.
+        s(single Line): 한 줄에 걸쳐서 명령 수행(text필드). ? 제어코드도 포함해서 처리한다(\n).
+        m(multi Line): 여러줄의 내용에서 명령 수행(textarea필드).
+        i: 영문자일 때 대, 소문자 구분 없이 수행.
+        u: 유니코드 수행.
+
+      메서드
+        str.match(/정규식/플래그);
+        str.replace(/정규식/, "대체문자열");
+        str.split(/정규식/);
+        (/정규식/).test(str);
+        (/정규식/).exec(str);
+    </pre>
+  </div>
+  
+  <script>
+  </script>
+</body>
+</html>
