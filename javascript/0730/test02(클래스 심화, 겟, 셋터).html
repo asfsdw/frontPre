@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>get, setter</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+
+    class Member {
+      // 필드 생략 가능.
+      constructor(name, age) {
+        this.name = name; // set name을 불러 처리하게 된다.
+        this.age = age;
+      }
+      // get, setter
+      get name() {return this._name;}
+      set name(name) {this._name = name;}
+      get age() {return this._age;}
+      set age(age) {
+        // 유효성 검사 가능
+        if(age < 1) age = 1;
+        this._age = age;
+      }
+
+      memberPrint() {
+        let job = '학생'
+        console.log('1.성명: ',name,' 2.나이: ',this.age,' 3.직업: ',job);
+      }
+    }
+
+    let member = new Member('홍길동', 25);
+    member.memberPrint();
+    console.log(`1.성명: ${member.name} 2.나이: ${member.age} 3.직업: ${member.job}`);
+    console.log('');
+    
+    console.log(`1.성명: ${member.name()} 2.나이: ${member.age()} 3.직업: ${member.job}`);
+  </script>
+</head>
+<body>
+  <p><br/></p>
+  <div class="container">
+    <h3>겟, 셋터 연습입니다.</h3>
+  </div>
+  
+  <script>
+  </script>
+</body>
+</html>

@@ -28,12 +28,15 @@ function regExCheck() {
   const regEx23 = /\D/g
   // 영문자 숫자 _값을 포함하고 있는가?
   const regEx24 = /\w/g
+  // 영문과 숫자 _외의 값을 포함하고 있는가?
+  const regEx25 = /\W/g
   //const regEx = //g
   // 공백을 포함하고 있는가?
-  const regEx25 = /\s/g
+  const regEx26 = /\s/g
 
   //(): 그룹
-  // ?=*: []안의 내용이 1개 이상 반복됐는가?
+  //.: 줄바꿈 문자를 제외한 모든 문자.
+  // (?=.*[]): []안의 내용이 1개 이상 반복됐는가?
 
   let content = document.getElementById("content").value.trim();
 
@@ -56,7 +59,7 @@ function regExCheck() {
   // if(!regEx22.test(content)) alert("본문에 숫자가 포함되어 있지 않습니다.")
   // if(!regEx23.test(content)) alert("본문에 숫자만 쓰여있습니다.")
   // if(!regEx24.test(content)) alert("영문과 숫자 _값 외에 다른 값이 포함되어 있습니다.")
-  if(regEx25.test(content)) alert("본문에 공백이 포함되어 있습니다.")
+  if(!regEx25.test(content)) alert("본문에 공백이 포함되어 있습니다.")
   else {
     let str = '';
     str = document.getElementById("content").value;

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+    let clockImg = '';
+    let statusTime;
+    
+    // 본문 먼저 읽어야 본문에 이미지를 출력할 수 있기 때문에 onload 사용.
+    // 본문 읽은 후, 월 일 시 분 초 실행.
+    // 갱신 빈도를 맞추기 위해 되부름 주기는 1초로 통일.
+    window.onload = function() {
+      monthImg();
+      dayImg()
+      secImg();
+      minutImg();
+      hourImg();
+    }
+
+    // 월
+    function monthImg() {
+      let date = new Date();
+      let hour = date.getHours();
+      let minut = date.getMinutes();
+      let sec = date.getSeconds();
+      let month = date.getMonth()+1;
+      let day = date.getDate();
+
+      // 10 미만 일 때, 숫자 앞에 0을 추가한다.
+      let monthFormat = month <=9 ? "0"+month : month;
+      // 10의 자리 추출.
+      let monthStr1 = monthFormat.toString().substring(0,1);
+      // 1의 자리 추출.
+      let monthStr2 = monthFormat.toString().substring(1,2);
+      
+      // 반복문으로 10의 자리 숫자가 i와 맞으면 10자리에 시간 이미지 출력.
+      for(let i=0; i<10; i++) {
+        clockImg = '<img src="../../../images/digit0'+i+'.jpg" />';
+        if(monthStr1 == i) document.getElementById("month1").innerHTML = clockImg;
+      }
+      // 반복문으로 1의 자리 숫자가 i와 맞으면 1자리에 시간 이미지 출력.
+      for(let i=0; i<10; i++) {
+        clockImg = '<img src="../../../images/digit0'+i+'.jpg" />';
+        if(monthStr2 == i) document.getElementById("month2").innerHTML = clockImg;
+      }
+      // 1초 후, 자신 되부름.
+      statusTime = setTimeout(monthImg, 1000);
+    }
+
+    // 일
+    function dayImg() {
+      let date = new Date();
+      let hour = date.getHours();
+      let minut = date.getMinutes();
+      let sec = date.getSeconds();
+      let month = date.getMonth()+1;
+      let day = date.getDate();
+
+      let dayFormat = day <=9 ? "0"+day : day;
+      let dayStr1 = dayFormat.toString().substring(0,1);
+      let dayStr2 = dayFormat.toString().substring(1,2);
+      
+      for(let i=0; i<10; i++) {
+        clockImg = '<img src="../../../images/digit0'+i+'.jpg" />';
+        if(dayStr1 == i) document.getElementById("day1").innerHTML = clockImg;
+      }
+      for(let i=0; i<10; i++) {
+        clockImg = '<img src="../../../images/digit0'+i+'.jpg" />';
+        if(dayStr2 == i) document.getElementById("day2").innerHTML = clockImg;
+      }
+      statusTime = setTimeout(dayImg, 1000);
+    }
+
+    // 시
+    function hourImg() {
+      let date = new Date();
+      let hour = date.getHours();
+      let minut = date.getMinutes();
+      let sec = date.getSeconds();
+      let month = date.getMonth();
+      let day = date.getDate();
+
+      let hourFormat = hour <=9 ? "0"+hour : hour;
+      let hourStr1 = hourFormat.toString().substring(0,1);
+      let hourStr2 = hourFormat.toString().substring(1,2);
+      
+      for(let i=0; i<10; i++) {
+        clockImg = '<img src="../../../images/digit0'+i+'.jpg" />';
+        if(hourStr1 == i) document.getElementById("hour1").innerHTML = clockImg;
+      }
+      for(let i=0; i<10; i++) {
+        clockImg = '<img src="../../../images/digit0'+i+'.jpg" />';
+        if(hourStr2 == i) document.getElementById("hour2").innerHTML = clockImg;
+      }
+      statusTime = setTimeout(hourImg, 1000);
+    }
+
+    // 분
+    function minutImg() {
+      let date = new Date();
+      let hour = date.getHours();
+      let minut = date.getMinutes();
+      let sec = date.getSeconds();
+      let month = date.getMonth();
+      let day = date.getDate();
+
+      let minutFormat = minut <=9 ? "0"+minut : minut;
+      let minutStr1 = minutFormat.toString().substring(0,1);
+      let minutStr2 = minutFormat.toString().substring(1,2);
+      
+      for(let i=0; i<10; i++) {
+        clockImg = '<img src="../../../images/digit0'+i+'.jpg" />';
+        if(minutStr1 == i) document.getElementById("minut1").innerHTML = clockImg;
+      }
+      for(let i=0; i<10; i++) {
+        clockImg = '<img src="../../../images/digit0'+i+'.jpg" />';
+        if(minutStr2 == i) document.getElementById("minut2").innerHTML = clockImg;
+      }
+      statusTime = setTimeout(minutImg, 1000);
+    }
+
+    // 초
+    function secImg() {
+      let date = new Date();
+      let hour = date.getHours();
+      let minut = date.getMinutes();
+      let sec = date.getSeconds();
+      let month = date.getMonth();
+      let day = date.getDate();
+
+      let secFormat = sec <=9 ? "0"+sec : sec;
+      let secStr1 = secFormat.toString().substring(0,1);
+      let secStr2 = secFormat.toString().substring(1,2);
+      
+      for(let i=0; i<10; i++) {
+        clockImg = '<img src="../../../images/digit0'+i+'.jpg" />';
+        if(secStr1 == i) document.getElementById("sec1").innerHTML = clockImg;
+      }
+      for(let i=0; i<10; i++) {
+        clockImg = '<img src="../../../images/digit0'+i+'.jpg" />';
+        if(secStr2 == i) document.getElementById("sec2").innerHTML = clockImg;
+      }
+      statusTime = setTimeout(secImg, 1000);
+    }
+  </script>
+</head>
+<body>
+  <p><br/></p>
+  <div class="container">
+    <h3>디지털 시계</h3>
+    <div class="row" style="font-size: 3em;">
+      <div class="col" id="month1"></div>
+      <div class="col" id="month2"></div>
+      월
+      <div class="col" id="day1"></div>
+      <div class="col" id="day2"></div>
+      일
+    </div>
+    <div class="row" style="font-size: 5em;">
+      <div class="col" id="hour1"></div>
+      <div class="col" id="hour2"></div>
+      :
+      <div class="col" id="minut1"></div>
+      <div class="col" id="minut2"></div>
+      :
+      <div class="col" id="sec1"></div>
+      <div class="col" id="sec2"></div>
+    </div>
+  </div>
+  
+  <script>
+  </script>
+</body>
+</html>
