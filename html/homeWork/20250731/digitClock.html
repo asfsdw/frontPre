@@ -25,11 +25,7 @@
     // 월
     function monthImg() {
       let date = new Date();
-      let hour = date.getHours();
-      let minut = date.getMinutes();
-      let sec = date.getSeconds();
       let month = date.getMonth()+1;
-      let day = date.getDate();
 
       // 10 미만 일 때, 숫자 앞에 0을 추가한다.
       let monthFormat = month <=9 ? "0"+month : month;
@@ -55,10 +51,6 @@
     // 일
     function dayImg() {
       let date = new Date();
-      let hour = date.getHours();
-      let minut = date.getMinutes();
-      let sec = date.getSeconds();
-      let month = date.getMonth()+1;
       let day = date.getDate();
 
       let dayFormat = day <=9 ? "0"+day : day;
@@ -80,10 +72,6 @@
     function hourImg() {
       let date = new Date();
       let hour = date.getHours();
-      let minut = date.getMinutes();
-      let sec = date.getSeconds();
-      let month = date.getMonth();
-      let day = date.getDate();
 
       let hourFormat = hour <=9 ? "0"+hour : hour;
       let hourStr1 = hourFormat.toString().substring(0,1);
@@ -103,11 +91,7 @@
     // 분
     function minutImg() {
       let date = new Date();
-      let hour = date.getHours();
       let minut = date.getMinutes();
-      let sec = date.getSeconds();
-      let month = date.getMonth();
-      let day = date.getDate();
 
       let minutFormat = minut <=9 ? "0"+minut : minut;
       let minutStr1 = minutFormat.toString().substring(0,1);
@@ -127,11 +111,7 @@
     // 초
     function secImg() {
       let date = new Date();
-      let hour = date.getHours();
-      let minut = date.getMinutes();
       let sec = date.getSeconds();
-      let month = date.getMonth();
-      let day = date.getDate();
 
       let secFormat = sec <=9 ? "0"+sec : sec;
       let secStr1 = secFormat.toString().substring(0,1);
