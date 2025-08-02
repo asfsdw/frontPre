@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+    let imgStop;
+    let cnt = 0;
+    let str = '', strCnt = '';
+    
+    $(() => {
+      $("#betBtn").click(() => {
+        let bet = $("#betMoney").val();
+        if(bet == '') $("#betMoney").val(10000);
+
+        $("#betBtn").css("display", "none");
+        $("#stopRoll").css("display", "block");
+
+        str = ''
+        demo.innerHTML = strCnt+str;
+
+        imgStop = setInterval(randImg, 100);
+      });
+
+      $("#stopRoll").click(() => {
+        $("#betBtn").css("display", "block");
+        $("#stopRoll").css("display", "none");
+
+        clearInterval(imgStop);
+
+        cnt++;
+
+        result();
+      });
+    });
+
+    function randImg() {
+      let imgRoll1 = 0, imgRoll2 = 0, imgRoll3 = 0;
+      let imgSrc1 = '', imgSrc2 = '', imgSrc3 = '';
+      imgRoll1 = parseInt((Math.random()*6)+1);
+      imgRoll2 = parseInt((Math.random()*6)+1);
+      imgRoll3 = parseInt((Math.random()*6)+1);
+
+      imgSrc1 = '<img src="../../../images/0'+imgRoll1+'.jpg" width="200px" />';
+      imgSrc2 = '<img src="../../../images/0'+imgRoll2+'.jpg" width="200px" />';
+      imgSrc3 = '<img src="../../../images/0'+imgRoll3+'.jpg" width="200px" />';
+
+      $("#img1").html(imgSrc1);
+      $("#img2").html(imgSrc2);
+      $("#img3").html(imgSrc3);
+    }
+
+    function result() {
+      let imgbet1 = '', imgbet2 = '';
+      let bet = $("#betMoney").val();
+
+      // 숫자 외에 전부 공백처리, width값 공백처리
+      let imgRes1 = $("#img1").html().replace(/[^0-6]/g, "").replace("200","");
+      let imgRes2 = $("#img2").html().replace(/[^0-6]/g, "").replace("200","");
+      let imgRes3 = $("#img3").html().replace(/[^0-6]/g, "").replace("200","");
+
+      // 이미지 배율 설정
+      for(let i=1; i<7; i++) {
+        let imgRes = '0'+i+'';
+        if(imgRes1 == imgRes) imgbet1 = ''+i+'0';
+      }
+      for(let i=1; i<7; i++) {
+        let imgRes = '0'+i+'';
+        if(imgRes2 == imgRes) imgbet2 = ''+i+'0';
+      }
+
+      strCnt = `시행 횟수: ${cnt}회<br/>`;
+      demo.innerHTML = strCnt;
+
+      // 결과 출력
+      if(imgRes1 == imgRes2 && imgRes1 == imgRes3) {
+        str += `<font size="4" color="green">그림의 배율 ${imgbet1} * 배팅 금액 ${bet} 만큼의 배당금이 지급됩니다!</font><br/>`;
+        str += `<font size="4"><b>배당금: ${imgbet1 * bet}<b/></font>`;
+        demo.innerHTML += str;
+      }
+      else if(imgRes2 == imgRes3 && imgRes1 != imgRes2) {
+        str += `<font size="4" color="green">그림의 배율 ${imgbet2} * (배팅 금액 ${bet}의 5%) 만큼의 배당금이 지급됩니다!</font><br/>`;
+        str += `<font size="4"><b>배당금: ${imgbet2 * (bet * 0.05)}<b/></font>`;
+        demo.innerHTML += str;
+      }
+      else if(imgRes1 == imgRes2 || imgRes1 == imgRes3) {
+        if(imgRes1 == imgRes2 && imgRes1 != imgRes3) {
+          str += `<font size="4" color="green">그림의 배율 ${imgbet1} * (배팅 금액 ${bet}의 10%) 만큼의 배당금이 지급됩니다!</font><br/>`;
+          str += `<font size="4"><b>배당금: ${imgbet1 * (bet * 0.1)}<b/></font>`;
+          demo.innerHTML += str;
+        }
+        if(imgRes1 == imgRes3 && imgRes1 != imgRes2) {
+          str += `<font size="4" color="green">그림의 배율 ${imgbet1} * (배팅 금액 ${bet}의 10%) 만큼의 배당금이 지급됩니다!</font><br/>`;
+          str += `<font size="4"><b>배당금: ${imgbet1 * (bet * 0.1)}<b/></font>`;
+          demo.innerHTML += str;
+        }
+      }
+      else {
+        str += `<font size="4" color="red">맞는 그림이 없습니다!<br/>배당금: 0원</font>`;
+        demo.innerHTML += str;
+      }
+    }
+  </script>
+</head>
+<body>
+  <p><br/></p>
+  <div class="container">
+    <h3 class="text-center">JackPot게임입니다.</h3>
+    <p><br/></p>
+    <div class="row">
+      <div class="col text-center"><img src="../../../images/01.jpg" width="100px" /><br/><font size="5">10배</font></div>
+      <div class="col text-center"><img src="../../../images/02.jpg" width="100px" /><br/><font size="5">20배</font></div>
+      <div class="col text-center"><img src="../../../images/03.jpg" width="100px" /><br/><font size="5">30배</font></div>
+      <div class="col text-center"><img src="../../../images/04.jpg" width="100px" /><br/><font size="5">40배</font></div>
+      <div class="col text-center"><img src="../../../images/05.jpg" width="100px" /><br/><font size="5">50배</font></div>
+      <div class="col text-center"><img src="../../../images/06.jpg" width="100px" /><br/><font size="5">60배</font></div>
+    </div>
+    <hr/>
+    <div>
+      <pre><font size="4"><b>
+        - 3장의 그림이 맞으면 '배팅 금액 * 맞은 그림의 배율'만큼의 배당금이 지급됩니다.
+        - 2장의 그림이 맞으면 '맞은 그림의 배율 * (배팅 금액의 5% or 10%)'만큼의 배당금이 지급됩니다.
+        - 첫 번째 그림과 두 번째 그림 혹은 첫 번째 그림과 세 번째 그림이 맞으면 10%,
+          두 번째 그림과 세 번째 그림이 맞으면 5%
+        - 일치하는 그림이 없으면 배당금은 지급되지 않습니다.
+      </b></font></pre>
+    </div>
+    <hr/>
+    <div class="text-center">
+      <span>배팅할 금액을 입력하세요.</span>
+      <input type="number" id="betMoney" name="betMoney" value="10000" min="10000" max="100000" step="1000" />
+      <span>원을 배팅합니다.</span>
+    </div>
+    <p></p>
+    <div>
+      <input type="button" name="betBtn" id="betBtn" value="잭팟 실행" class="btn btn-success form-control" />
+      <input type="button" name="stopRoll" id="stopRoll" value="그림 멈추기" style="display: none" class="btn btn-warning form-control" />
+    </div>
+    <p></p>
+    <div class="row">
+      <div class="col"></div>
+      <div id="img1" class="col"></div>
+      <div id="img2" class="col"></div>
+      <div id="img3" class="col"></div>
+      <div class="col"></div>
+    </div>
+    <p></p>
+    <div id="demo" class="text-center"></div>
+    <hr/>
+    <input type="button" value="게임 초기화" onclick="location.reload()" class="btn btn-danger form-control" />
+  </div>
+  
+  <script>
+  </script>
+</body>
+</html>

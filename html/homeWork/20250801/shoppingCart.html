@@ -9,13 +9,14 @@
   <script>
     'use strict';
     let idx = 0;
+    let cartIdx = 1;
 
     // 가격계산(개별가격*수량)
     function priceCalc() {
       if(blankCheck()) {
         let price = myform.price.value * myform.ea.value;
         //price = numberWithCommas(price)
-        demo1.innerHTML = numberWithCommas(price) + "원";
+        document.getElementById("demo"+(idx+1)+"").innerHTML = numberWithCommas(price) + "원";
       }
     }
 
@@ -24,7 +25,7 @@
       if(blankCheck()) {
         let price = myform.price.value * myform.ea.value;
         let vat = price * 0.1;
-        demo2.innerHTML = numberWithCommas(vat) + "원";
+        document.getElementById("demo"+(idx+2)+"").innerHTML = numberWithCommas(vat) + "원";
       }
     }
 
@@ -34,7 +35,8 @@
         let price = myform.price.value * myform.ea.value;
         let vat = price * 0.1;
         let totalPrice = price + vat;
-        demo3.innerHTML = numberWithCommas(totalPrice) + "원";
+        document.getElementById("demo"+(idx+3)+"").innerHTML = numberWithCommas(totalPrice) + "원";
+        tot += totalPrice;
       }
     }
 
@@ -94,20 +96,58 @@
     function cartSend() {
       let str = '';
       str = '<hr/>'
-      str += '<div class="row mb-1">'+
-              '<div class="col ms-4">☞ 가격(단가*수량) : </div>'+
-              '<div class="col" id="demo'+(idx+1)+'"></div>'+
-            '</div>'+
-            '<div class="row mb-1">'+
-              '<div class="col ms-4">☞ VAT(가격의 10%) : </div>'+
-              '<div class="col" id="demo'+(idx+2)+'"></div>'+
-            '</div>'+
-            '<div class="row">'+
-              '<div class="col ms-4">☞ 총판매가격(VAT포함) : </div>'+
-              '<div class="col" id="demo'+(idx+3)+'"></div>'+
+      idx+=3;
+      cartIdx ++;
+      str +='<div id="'+cartIdx+'">'+ 
+              '<div class="row mb-1">'+
+                '<div class="row ms-4">☞ '+cartIdx+'번 장바구니</div>'+
+                '<div class="col ms-4">☞ 가격(단가*수량) : </div>'+
+                '<div class="col" id="demo'+(idx+1)+'"></div>'+
+              '</div>'+
+              '<div class="row mb-1">'+
+                '<div class="col ms-4">☞ VAT(가격의 10%) : </div>'+
+                '<div class="col" id="demo'+(idx+2)+'"></div>'+
+              '</div>'+
+              '<div class="row">'+
+                '<div class="col ms-4">☞ 총판매가격(VAT포함) : </div>'+
+                '<div class="col" id="demo'+(idx+3)+'"></div>'+
+              '</div>'+
             '</div>';
       demoProduct.innerHTML += str;
-      idx+=3;
+      calcTot();
+    }
+    
+    // 지정번호 카트 삭제
+    function cartDelete() {
+      let cartNumber = document.getElementById("cartNum").value;
+      // 삭제하는 카드의 가격을 총 가격에서 빼주기 위해 쉼표와 원을 공백으로 만들어 숫자만 남기기
+      let price1 = document.getElementById("demo"+(cartNumber*3)+"").innerText.replace(',',"");
+      let price2 = price1.replace('원',"");
+
+      if(document.getElementById(""+cartNumber+"")) {
+        document.getElementById(""+cartNumber+"").remove();
+        // 삭제한 카드의 가격을 총 가격에서 빼기
+        tot -= price2;
+      }
+      else {
+        demoCart.innerHTML = '<font size="6px" color="red"><b>카트를 찾을 수 없습니다.</b></font>';
+        return false;
+      }
+      // 총 가격 갱신
+      calcTot();
+    }
+    
+    // 초기 전체 가격 출력
+    window.onload = function() {
+      calcTot();
+    }
+    
+    // 전체 가격 출력
+    let tot = 0;
+    function calcTot() {
+      if(isNaN(tot)) tot = 0;
+      
+      cartTot.innerHTML = '전체 가격: '+tot;
     }
 
     // 콤마 변환함수(1,234)
@@ -156,23 +196,33 @@
       <input type="reset" value="다시선택" onclick="resetCheck()" class="btn btn-secondary col"/>
       <span class="col"></span>
       <input type="button" value="장바구니담기" onclick="cartSend()" class="btn btn-warning me-1 col">
-      <input type="button" value="장바구니비우기" onclick="location.reload()"  class="btn btn-danger col">
+      <input type="button" value="장바구니비우기" onclick="location.reload()" class="btn btn-danger col">
+    </div>
+    <div class="input-group">
+      <input type="number" name="cartNum" id="cartNum" value="1" min="1" max="10" class="form-control" />
+      <span class="input-group-text form-control">번</span>
+      <input type="button" value="장바구니 삭제" onclick="cartDelete()" class="btn btn-danger form-control" />
     </div>
     
     <div class="mt-2 p-2 border" id="demoProduct">
-      <div class="row mb-1">
-        <div class="col ms-4">☞ 가격(단가*수량) : </div>
-        <div class="col" id="demo1"></div>
-      </div>
-      <div class="row mb-1">
-        <div class="col ms-4">☞ VAT(가격의 10%) : </div>
-        <div class="col" id="demo2"></div>
-      </div>
-      <div class="row">
-        <div class="col ms-4">☞ 총판매가격(VAT포함) : </div>
-        <div class="col" id="demo3"></div>
+      <div id="1">
+        <div class="row mb-1">
+          <div class="row ms-4">☞ 1번 장바구니</div>
+          <div class="col ms-4">☞ 가격(단가*수량) : </div>
+          <div class="col" id="demo1"></div>
+        </div>
+        <div class="row mb-1">
+          <div class="col ms-4">☞ VAT(가격의 10%) : </div>
+          <div class="col" id="demo2"></div>
+        </div>
+        <div class="row">
+          <div class="col ms-4">☞ 총판매가격(VAT포함) : </div>
+          <div class="col" id="demo3"></div>
+        </div>
       </div>
     </div>
+    <hr/>
+    <div id="cartTot"></div>
     <hr/>
     <div id="demoCart"></div>
   </form>
