@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>attr</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+
+    $(() => {
+      $("#checkBtn").on("click", () => {
+        // let email = $("#email").val();
+        let email = $("#email").attr("value");
+        $("#demo").html(email);
+      });
+    });
+  </script>
+</head>
+<body>
+  <p><br/></p>
+  <div class="container">
+    <h3>속성 연습입니다.</h3>
+    <form name="myform" method="post">
+      <div>이메일
+        <input type="text" name="email" id="email" value="<a href='https://www.daum.net' target='_black'>다음</a>" class="form-control mb-2" />
+      </div>
+      <div>
+        <input type="button" name="checkBtn" id="checkBtn" value="출력" class="btn btn-success" />
+      </div>
+      <hr/>
+      <div id="demo"></div>
+    </form>
+  </div>
+  
+  <script>
+  </script>
+</body>
+</html>

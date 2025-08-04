@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+    let day = new Date();
+    let year = day.getFullYear();
+    let month = day.getMonth();
+    let today = day.getDate();
+    let week = day.getDay();
+    let firstWeek = new Date(year, month, 1).getDay();
+    let lastDay = new Date(year, month+1, 0).getDate();
+
+    let day2 = new Date();
+    let year2 = day2.getFullYear();
+    let month2 = day2.getMonth()+1;
+    let today2 = day2.getDate();
+    let week2 = day2.getDay();
+    let firstWeek2 = new Date(year2, month2, 1).getDay();
+    let lastDay2 = new Date(year2, month2+1, 0).getDate();
+    
+    $(function() {
+      // 이번 달 달력.
+      let str1 = "<table class='table table-bordered text-center'>";
+        str1 += "<tr class='table-secondary'>";
+        str1 += "<th><font color='red'>일</font></th>";
+        str1 += "<th>월</th><th>화</th><th>수</th><th>목</th><th>금</th>"
+        str1 += "<th><font color='blue'>토</font></th>";
+        str1 += "</tr>"
+        str1 += "<tr>"
+
+      let br = 0, sw = 0;
+
+      for(let i=1; i<=lastDay; i++) {
+        if(sw == 0) {
+          for(let j=0; j<firstWeek; j++) {
+            br++;
+            str1 += "<td>&nbsp;</td>";
+          }
+          sw = 1;
+        }
+        str1 += "<td>"
+        if(br == 0) str1 += "<font color='red'>"+i+"</font>";
+        else if(br == 6) str1 += "<font color='blue'>"+i+"</font>";
+        else str1 += ""+i+"";
+        str1 += "</td>";
+        br++;
+
+        if(br == 7) {
+          br = 0;
+          str1 += "</tr><tr>";
+        }
+      }
+      for(let i=br; i<7; i++) {
+        str1 += "<td>&nbsp;</td>";
+      }
+      str1 += "</tr></table>";
+
+      $("#calendar1").html(str1);
+
+      // 다음 달 달력.
+      let str2 = "<table class='table table-bordered text-center'>";
+        str2 += "<tr class='table-secondary'>";
+        str2 += "<th><font color='red'>일</font></th>";
+        str2 += "<th>월</th><th>화</th><th>수</th><th>목</th><th>금</th>"
+        str2 += "<th><font color='blue'>토</font></th>";
+        str2 += "</tr>"
+        str2 += "<tr>"
+
+      br = 0, sw = 0;
+
+      for(let i=1; i<=lastDay2; i++) {
+        if(sw == 0) {
+          for(let j=0; j<firstWeek2; j++) {
+            br++;
+            str2 += "<td>&nbsp;</td>";
+          }
+          sw = 1;
+        }
+        str2 += "<td>"
+        if(br == 0) str2 += "<font color='red'>"+i+"</font>";
+        else if(br == 6) str2 += "<font color='blue'>"+i+"</font>";
+        else str2 += ""+i+"";
+        str2 += "</td>";
+        br++;
+
+        if(br == 7) {
+          br = 0;
+          str2 += "</tr><tr>";
+        }
+      }
+      for(let i=br; i<7; i++) {
+        str2 += "<td>&nbsp;</td>";
+      }
+      str2 += "</tr></table>";
+
+      $("#calendar2").html(str2);
+    });
+
+    // 날짜 선택.
+    let first = 0, second = 0;
+    $(document).on("click", "td" ,function() {
+      if($(this).hasClass("selectDays")) {
+        $(this).removeClass("selectDays");
+      }
+      else {
+        let selectDay = Number($(this).text());
+        if(selectDay < today) alert(""+today+"일보다 이전 날을 선택할 수 없습니다.");
+        else {
+          $(this).addClass("selectDays");
+          if(first == 0) {first = selectDay;}
+          else second = selectDay;
+        }
+      }
+      if (first !== 0 && second !== 0) {
+        // 작은 값부터 큰 값 순서로 정렬
+        const start = Math.min(first, second);
+        const end = Math.max(first, second);
+
+        $("td").each(function() {
+          const dayNum = Number($(this).text());
+          if (dayNum && dayNum >= start && dayNum <= end) {
+            $(this).addClass("selectDays");
+          }
+        });
+
+        // 다음 선택을 위해 초기화
+        first = 0;
+        second = 0;
+      }
+    });
+  </script>
+
+  <style>
+    .selectDays {background-color: yellow;}
+  </style>
+</head>
+<body>
+  <p><br/></p>
+  <div class="container">
+    <h3>비행기 예약.</h3>
+    <div id="calendar1"></div>
+    <div id="calendar2"></div>
+  </div>
+  
+  <script>
+  </script>
+</body>
+</html>

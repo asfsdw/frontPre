@@ -46,9 +46,9 @@
       imgRoll2 = parseInt((Math.random()*6)+1);
       imgRoll3 = parseInt((Math.random()*6)+1);
 
-      imgSrc1 = '<img src="../../../images/0'+imgRoll1+'.jpg" width="200px" />';
-      imgSrc2 = '<img src="../../../images/0'+imgRoll2+'.jpg" width="200px" />';
-      imgSrc3 = '<img src="../../../images/0'+imgRoll3+'.jpg" width="200px" />';
+      imgSrc1 = '<img src="../../../images/0'+imgRoll1+'.jpg" width="200px" height="160px" />';
+      imgSrc2 = '<img src="../../../images/0'+imgRoll2+'.jpg" width="200px" height="160px" />';
+      imgSrc3 = '<img src="../../../images/0'+imgRoll3+'.jpg" width="200px" height="160px" />';
 
       $("#img1").html(imgSrc1);
       $("#img2").html(imgSrc2);
@@ -59,10 +59,10 @@
       let imgbet1 = '', imgbet2 = '';
       let bet = $("#betMoney").val();
 
-      // 숫자 외에 전부 공백처리, width값 공백처리
-      let imgRes1 = $("#img1").html().replace(/[^0-6]/g, "").replace("200","");
-      let imgRes2 = $("#img2").html().replace(/[^0-6]/g, "").replace("200","");
-      let imgRes3 = $("#img3").html().replace(/[^0-6]/g, "").replace("200","");
+      // 숫자 외에 전부 공백처리, width, height값 공백처리
+      let imgRes1 = $("#img1").html().replace(/[^0-6]/g, "").replace("200","").replace("160","");
+      let imgRes2 = $("#img2").html().replace(/[^0-6]/g, "").replace("200","").replace("160","");
+      let imgRes3 = $("#img3").html().replace(/[^0-6]/g, "").replace("200","").replace("160","");
 
       // 이미지 배율 설정
       for(let i=1; i<7; i++) {
@@ -113,12 +113,12 @@
     <h3 class="text-center">JackPot게임입니다.</h3>
     <p><br/></p>
     <div class="row">
-      <div class="col text-center"><img src="../../../images/01.jpg" width="100px" /><br/><font size="5">10배</font></div>
-      <div class="col text-center"><img src="../../../images/02.jpg" width="100px" /><br/><font size="5">20배</font></div>
-      <div class="col text-center"><img src="../../../images/03.jpg" width="100px" /><br/><font size="5">30배</font></div>
-      <div class="col text-center"><img src="../../../images/04.jpg" width="100px" /><br/><font size="5">40배</font></div>
-      <div class="col text-center"><img src="../../../images/05.jpg" width="100px" /><br/><font size="5">50배</font></div>
-      <div class="col text-center"><img src="../../../images/06.jpg" width="100px" /><br/><font size="5">60배</font></div>
+      <div class="col text-center"><img src="../../../images/01.jpg" width="100px" height="80px" /><br/><font size="5">10배</font></div>
+      <div class="col text-center"><img src="../../../images/02.jpg" width="100px" height="80px" /><br/><font size="5">20배</font></div>
+      <div class="col text-center"><img src="../../../images/03.jpg" width="100px" height="80px" /><br/><font size="5">30배</font></div>
+      <div class="col text-center"><img src="../../../images/04.jpg" width="100px" height="80px" /><br/><font size="5">40배</font></div>
+      <div class="col text-center"><img src="../../../images/05.jpg" width="100px" height="80px" /><br/><font size="5">50배</font></div>
+      <div class="col text-center"><img src="../../../images/06.jpg" width="100px" height="80px" /><br/><font size="5">60배</font></div>
     </div>
     <hr/>
     <div>
